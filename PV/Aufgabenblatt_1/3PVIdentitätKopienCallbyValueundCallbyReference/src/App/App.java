@@ -13,7 +13,7 @@ public class App {
 
         
 
-        System.out.println(aClonePerson2 == aPerson); // DEEP COPY
+        System.out.println(aClonePerson2 == aPerson); // DEEP COPYy
         System.out.println(aClonePerson == aPerson); // REFERENCE 
         
         System.out.println(aPerson.equals(aClonePerson));
