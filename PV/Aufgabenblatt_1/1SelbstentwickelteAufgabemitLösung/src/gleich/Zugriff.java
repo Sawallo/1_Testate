@@ -1,5 +1,6 @@
 package src.gleich;
-//import src.gleich.Methoden;
+import src.gleich.Methoden;
+
 
 public class Zugriff {
 
