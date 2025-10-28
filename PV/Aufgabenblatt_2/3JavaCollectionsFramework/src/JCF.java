@@ -1,43 +1,70 @@
 import java.util.LinkedList;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.TreeSet;
 
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 
 public class JCF{
 
-        
+       static void testAdd(Collection<Integer> col){
+
+            long startTimeLL = System.nanoTime();
+
+                        for(Integer i = 0; i<100; i++){
+                col.add(i);
+            }
+            long EndTimeLL = System.nanoTime();
+            System.out.println("Die Laufzeit für die Test_Add beträgt " + (EndTimeLL-startTimeLL));
+            
+        }
+
+        static void testContains(Collection<Integer> col){
+
+             long startTimeLL_Contains = System.nanoTime();
+            for(Integer i = 0; i<100; i++){
+                col.contains(i);
+            }
+            long EndTimeLL_Contains = System.nanoTime();
+            System.out.println("Die Laufzeit für die testContains beträgt " + (EndTimeLL_Contains-startTimeLL_Contains));
+
+
+        }
+
+        static void testRemove(Collection<Integer> col){
+
+             long startTimeLL_Contains = System.nanoTime();
+           for(Integer i = 0; i<100; i++){
+                col.remove(i);
+            }
+            long EndTimeLL_Contains = System.nanoTime();
+            System.out.println("Die Laufzeit für die testRemove beträgt " + (EndTimeLL_Contains-startTimeLL_Contains));
+
+
+        }
+
+          
+
+
          
          
         public static void main(String[] args) {
             List<Integer> LL = new LinkedList<Integer>();
             List<Integer> AL = new ArrayList<Integer>();
-            Map<Integer,Integer> LHM = new LinkedHashMap<Integer,Integer>();
+            Set<Integer> LHS = new LinkedHashSet<Integer>();
 
             
-            long startTimeLL = System.nanoTime();
+            
 
-            for(Integer i = 0; i<100; i++){
-                LL.add(i);
-            }
-            long EndTimeLL = System.nanoTime();
-            System.out.println("Die Laufzeit für die LinkedList_Add beträgt " + (EndTimeLL-startTimeLL));
+            testAdd(AL);
+            testAdd(LL);
             
-            long startTimeLL_Contains = System.nanoTime();
-            for(Integer i = 0; i<100; i++){
-                LL.contains(i);
-            }
-            long EndTimeLL_Contains = System.nanoTime();
-            System.out.println("Die Laufzeit für die LinkedList_Contains beträgt " + (EndTimeLL_Contains-startTimeLL_Contains));
+
+           
             
-            long startTimeLL_remove = System.nanoTime();
-            for(Integer i = 0; i<100; i++){
-                LL.remove(i);
-            }
-            long EndTimeLL_remove = System.nanoTime();
-            System.out.println("Die Laufzeit für die LinkedList_Remove beträgt " + (EndTimeLL_remove-startTimeLL_remove));
 
             long startTimeAL = System.nanoTime();
             AL.add(0,2);
@@ -46,7 +73,7 @@ public class JCF{
             long EndTimeAL = System.nanoTime();
             System.out.println("Die Laufzeit für die ArrayList beträgt " + (EndTimeAL-startTimeAL));
 
-            LHM.put(1, 1);
+            
             
             
 
