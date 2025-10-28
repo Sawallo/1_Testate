@@ -1,11 +1,20 @@
 public class TurtleBot extends MobileRobot implements Drivable {
 
-    public void bringup() {
-        System.out.println(x+" "+y+" "+z);
+    @Override
+    public void driveForward(double distance) {
+        positionX = distance;
+        positionY = distance;
     }
 
-    public void driveForward(double distance) {
-        System.out.println("TrutleBot fährt voraus");
+   
+   @Override
+    public String bringup() {
+      return "Turtle Bot wird gestartet... ";
     }
+
+
     
+
+   
+
 }
