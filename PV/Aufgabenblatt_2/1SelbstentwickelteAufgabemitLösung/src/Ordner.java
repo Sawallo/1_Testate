@@ -11,8 +11,8 @@ import java.nio.file.*;
 public class Ordner {
     
 
-    FileSystem fs = FileSystem.getDefault();
-    Path p = fs.getpath("E:/Docsuments/swe");
+    //FileSystem fs = FileSystem.getDefault();
+    //Path p = fs.getpath("E:/Docsuments/swe");
 
 
 
