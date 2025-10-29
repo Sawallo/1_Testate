@@ -55,23 +55,35 @@ public class JCF{
             List<Integer> LL = new LinkedList<Integer>();
             List<Integer> AL = new ArrayList<Integer>();
             Set<Integer> LHS = new LinkedHashSet<Integer>();
+            Set<Integer> TS = new TreeSet<Integer>();
+
 
             
             
-
+            System.out.println("ArrayList:");
             testAdd(AL);
+            testContains(AL);
+            testRemove(AL);
+        
+            System.out.println("LinkedList:");
             testAdd(LL);
+            testContains(LL);
+            testRemove(LL);
+
+            System.out.println("LinkedHashSet:");
+            testAdd(LHS);
+            testContains(LHS);
+            testRemove(LHS);
+
+            System.out.println("TreeSet:");
+            testAdd(TS);
+            testContains(TS);
+            testRemove(TS);
+
             
 
            
             
-
-            long startTimeAL = System.nanoTime();
-            AL.add(0,2);
-            AL.remove(0);
-            AL.contains(0);
-            long EndTimeAL = System.nanoTime();
-            System.out.println("Die Laufzeit für die ArrayList beträgt " + (EndTimeAL-startTimeAL));
 
             
             
