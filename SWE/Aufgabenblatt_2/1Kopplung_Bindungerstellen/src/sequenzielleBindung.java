@@ -13,10 +13,10 @@ class Schritt2 {
 }
 
 
-public class Bindung1 {
+public class sequenzielleBindung {
 
     public static void main(String[] args) {
-        
+
         Schritt1 weg = new Schritt1();
 
         weg.s();
