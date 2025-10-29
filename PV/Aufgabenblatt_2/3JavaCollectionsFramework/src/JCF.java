@@ -14,7 +14,7 @@ public class JCF{
 
             long startTimeLL = System.nanoTime();
 
-                        for(Integer i = 0; i<100; i++){
+                        for(Integer i = 0; i<1000; i++){
                 col.add(i);
             }
             long EndTimeLL = System.nanoTime();
@@ -25,7 +25,7 @@ public class JCF{
         static void testContains(Collection<Integer> col){
 
              long startTimeLL_Contains = System.nanoTime();
-            for(Integer i = 0; i<100; i++){
+            for(Integer i = 0; i<1000; i++){
                 col.contains(i);
             }
             long EndTimeLL_Contains = System.nanoTime();
@@ -37,7 +37,7 @@ public class JCF{
         static void testRemove(Collection<Integer> col){
 
              long startTimeLL_Contains = System.nanoTime();
-           for(Integer i = 0; i<100; i++){
+           for(Integer i = 0; i<1000; i++){
                 col.remove(i);
             }
             long EndTimeLL_Contains = System.nanoTime();
@@ -80,7 +80,7 @@ public class JCF{
             testContains(TS);
             testRemove(TS);
 
-            
+
 
            
             
