@@ -14,14 +14,14 @@ import java.util.Scanner;
 
 public class TryCatch {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        try {
-            System.out.print("Gib eine Zahl ein: ");
-            int zahl = sc.nextInt();
-            System.out.println("Du hast die Zahl " + zahl + " eingegeben!");
-        } catch (Exception e) {
-            System.out.println("Das war keine gültige Zahl!");
+        try (Scanner sc = new Scanner(System.in)) {
+            try {
+                System.out.print("Gib eine Zahl ein: ");
+                int zahl = sc.nextInt();
+                System.out.println("Du hast die Zahl " + zahl + " eingegeben!");
+            } catch (Exception e) {
+                System.out.println("Das war keine gültige Zahl!");
+            }
         }
     }
 }
