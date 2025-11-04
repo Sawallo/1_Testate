@@ -23,7 +23,7 @@ class UniversitySystem {
             System.out.println("Der Student ist durchgefallen.");
         }
     }
-    
+
     public static void main(String[] args) {
         UniversitySystem system = new UniversitySystem();
         system.printResult(65); // Beispielpunktzahl
