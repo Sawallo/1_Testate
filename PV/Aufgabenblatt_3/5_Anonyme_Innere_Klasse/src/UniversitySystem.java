@@ -3,7 +3,8 @@ class UniversitySystem {
 
     public UniversitySystem() {
         this.evaluator = new ExamEvaluatorInterface(){
-                public int evaluate(int score) {
+
+        public int evaluate(int score) {
         if (score >= 50) {
             return 1; // Bestanden
         } else {
