@@ -1,29 +1,28 @@
 //Point - Repräsentiert einen n-dimensionalen Datenpunkt, der mit einer variablen Parameterliste von double-Werten erzeugt werden kann.
 
-public abstract class Point extends Geometry{
+public class Point extends Point2D{
 
-    protected double[] koords;
-
-    public Point(int dimension) {
-        super(dimension);
-    }
+    private double[] koords;
 
     public Point(double... koordinaten) {
+
         if (koordinaten.length < 2) {
             System.out.println("Es werden mehr Koordinaten beötigt");
         }
         this.koords = koordinaten;
     }
 
-    public int dimensions() {
-        return koords.length;
+    public double[] getKoords() {
+        return koords;
     }
 
-    public abstract double volume();
 
-    public abstract Geometry encapsulate(Geometry other);
-
-    public abstract int compareTo(Geometry other);
-
+    public Geometry encapsulate(Geometry other){
+        if (koords.length == 2) {
+            Point2D ueber = new Point2D(koords[0], koords[1]);
+            return ueber.encapsulate(other);
+        }
+        return null;
+    }
 
 }
