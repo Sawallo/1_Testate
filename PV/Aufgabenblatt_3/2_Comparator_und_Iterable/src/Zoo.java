@@ -40,8 +40,8 @@ public class Zoo implements Iterable<Animal>{
         private Animal [] tiere;
 
         public ZooIterator(Animal[] liste) {
-             this.tiere = liste;
-             Arrays.sort(this.tiere);
+            this.tiere = liste;
+            Arrays.sort(this.tiere);
         }
 
         public boolean hasNext() {

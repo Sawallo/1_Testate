@@ -1,6 +1,6 @@
 //Rectangle - Ein Rechteck, das mit zwei Objekten vom Typ Point2D erzeugt werden kann. 
 
-public class Rectangle extends Geometry implements Comparable<Geometry>{
+public class Rectangle extends Geometry{
 
     private Point2D ul; //unten links
     private Point2D or; //oben rechts
@@ -20,14 +20,22 @@ public class Rectangle extends Geometry implements Comparable<Geometry>{
     }
 
         public int dimensions() {
-        return 2;
+        return super.dimensions();
     }
 
     public double volume(){
-        return 1;
+        double a = Math.abs(this.ul.koords[0] - this.or.koords[0]);
+        double b = Math.abs(this.ul.koords[1] - this.or.koords[1]);
+        return (a * b);
     }
 
     public Geometry encapsulate(Geometry other){
+        if (Geometry.equals(Point2D)) {
+            
+        }
+        
+        
+        
         return other;
     }
 

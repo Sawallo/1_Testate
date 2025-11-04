@@ -1,3 +1,5 @@
+//Volume - Ein Volume kann durch zwei n-dimensionale Punkte erzeugt werden, die ein rechtwinkliges Volumen aufspannen, dessen Kanten alle achsenparallel verlaufen.
+
 public class Volume extends Geometry implements Comparable<Volume> {
 
         protected double[] coordinates;
