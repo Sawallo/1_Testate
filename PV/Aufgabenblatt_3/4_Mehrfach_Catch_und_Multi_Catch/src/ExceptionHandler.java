@@ -34,6 +34,7 @@ public class ExceptionHandler {
 
       } catch (IOException |NumberFormatException|ArithmeticException e4) {
         System.err.println(e4+ " Ausgelöst");
+        e4.printStackTrace();
       }
     }
 
