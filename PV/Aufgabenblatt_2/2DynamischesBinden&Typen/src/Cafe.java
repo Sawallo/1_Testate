@@ -17,7 +17,7 @@ public class Cafe {
         System.out.println("4: ((IcedTea) lemon).temperature		: " + ((IcedTea) lemon).temperature); // Da Attribute nicht dynamisch gebunden werden übernimmt der Type-Cast hier die zuordnung weil 
         System.out.println("5: ((Drink) coffee).temperature 		: " + ((Drink) coffee).temperature); // im vorfeld schon gesagt wurde von welchem typ diese Attribute sind 
         System.out.println("6: ((Drink) espresso).getTemperature()	: " + ((Drink) espresso).getTemperature()); // Der Interpreter schaut nicht nach Typen deswegen ist espresso ein Coffee statt ein Drink 
-        System.out.println("7: Ist dieser Cast möglich? icedTea = (IcedTea)((Drink)coffee);");
+        System.out.println("7: Ist dieser Cast möglich? icedTea = (IcedTea)((Drink)coffee);"); // Nur sichtbare und überschriebene Methoden werden gebunden
 
     }
 }

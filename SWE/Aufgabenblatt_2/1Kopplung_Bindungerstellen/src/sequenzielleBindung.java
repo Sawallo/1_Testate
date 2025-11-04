@@ -13,7 +13,11 @@ class Schritt2 {
 }
 
 
+<<<<<<< HEAD
 public class Bindung1 {
+=======
+public class sequenzielleBindung {
+>>>>>>> 0777ccb16ca222a79896fbeb3a4e8cb387b3f70e
 
     public static void main(String[] args) {
 
