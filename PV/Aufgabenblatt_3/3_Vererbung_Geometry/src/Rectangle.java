@@ -7,7 +7,7 @@ public class Rectangle extends Geometry{
 
     public Rectangle(Point2D eins, Point2D zwei){
         super(eins.dimensions());
-        if (eins.getX() < zwei.getX()){
+        if (eins.getX() > zwei.getX()){
             this.ul = eins;
             this.or = zwei;
         }
@@ -63,4 +63,7 @@ public class Rectangle extends Geometry{
         return Double.compare(this.volume(), other.volume());
     }
 
+    public String toString() {
+        return "Rectangle von: "+ ul +" bis "+ or;
+    }
 }

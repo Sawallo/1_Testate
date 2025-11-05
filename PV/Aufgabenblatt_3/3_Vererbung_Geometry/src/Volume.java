@@ -7,7 +7,7 @@ public class Volume extends Geometry {
 
     //Konstruktor
     public Volume(Point eins, Point zwei) {
-        super(eins.dimensions());
+        
         this.eckeeins = eins;
         this.eckezwei = zwei;
     }
@@ -47,4 +47,8 @@ public class Volume extends Geometry {
         return Double.compare(this.volume(), other.volume());
     }
     
+    @Override
+    public String toString() {
+        return "Rectangle von: "+ eckeeins +" bis "+ eckezwei;
+    }
 }

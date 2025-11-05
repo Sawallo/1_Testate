@@ -5,7 +5,7 @@ public class Point extends Point2D{
     private double[] koords;
 
     public Point(double... koordinaten) {
-
+        
         if (koordinaten.length < 2) {
             System.out.println("Es werden mehr Koordinaten beötigt");
         }
@@ -25,4 +25,7 @@ public class Point extends Point2D{
         return null;
     }
 
+    public String toString() {
+        return "("+koords[0]+"/"+koords[1]+")";
+    }
 }

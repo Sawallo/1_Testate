@@ -42,5 +42,8 @@ public class Point2D extends Geometry {
         return Double.compare(this.volume(), other.volume());
     }
     
+    public String toString() {
+        return "("+x+"/"+y+")";
+    }
 
 }
