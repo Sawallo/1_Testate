@@ -21,16 +21,19 @@ public class Geometriker {
         System.out.println("encapsulate r + r: "+r1.encapsulate(r2));
         System.out.println("encapsulate r + p: "+r1.encapsulate(pd1));
         System.out.println("dimensions: "+r1.dimensions());
+        System.out.println("volume: "+r1.volume());
+        System.out.println("volume: "+r1.encapsulate(r2).volume());
 
         System.out.println("\nVolume: ");
         //Volume v1 = new Volume(new Point(15, 23, 42), new Point(34, 18, 40));
         //Volume v2 = new Volume(new Point(60, 10, 15), new Point(21, 24, 30));
         Volume v1 = new Volume(new Point( 23, 42), new Point( 18, 40));
-        Volume v2 = new Volume(new Point( 10, 15), new Point( 24, 30));
+        Volume v2 = new Volume(new Point( 10, 20), new Point( 24, 30));
         System.out.println("compareTo: "+v1.compareTo(v2));
         System.out.println("compareTo: "+v2.compareTo(v1));
         System.out.println("encapsulate v + v: "+v1.encapsulate(v2));
         System.out.println("encapsulate v + p: "+v1.encapsulate(pd1));
+        System.out.println("volume: "+v2.volume());
 
         //a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object
     }
