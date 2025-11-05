@@ -1,17 +1,27 @@
-# Variablen
-JAVA = java
-JAVAC = javac
+#Variablen
 BIN = bin
-SRC = src
+CLASS = $(BIN)/Main.class $(BIN)/A.class $(BIN)/B.class
 
-# Standardziel
-all: version
 
-# Zeigt die installierte Java-Version an
+all: version run
+
 version:
-	$(JAVA) -version
+	java -version
 
-run:
 
+$(BIN):
+	mkdir $(BIN)
+
+# Regel zum Kompilieren der Java-Dateien
+
+$(BIN)/*.class: *.java 
+	javac -d $(BIN) 
+
+
+run: $(CLASS)
+	java -cp $(BIN) Main
+
+# Aufräumen
 clean:
+	rm -rf $(BIN)
 
