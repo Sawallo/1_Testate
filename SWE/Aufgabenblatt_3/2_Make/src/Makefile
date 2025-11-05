@@ -1,6 +1,17 @@
 # Variablen
+JAVA = java
+JAVAC = javac
+BIN = bin
+SRC = src
 
-# Targets
-all:
-	echo "Hallo"
-	echo "ASLDJASLDJ"
+# Standardziel
+all: version
+
+# Zeigt die installierte Java-Version an
+version:
+	$(JAVA) -version
+
+run:
+
+clean:
+
