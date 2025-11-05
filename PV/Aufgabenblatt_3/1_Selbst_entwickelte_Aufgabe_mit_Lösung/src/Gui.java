@@ -8,7 +8,7 @@ import java.awt.*;
 
 
 
-public class App {
+public class Gui {
     public static void main(String[] args) throws Exception {
         JFrame frame = new JFrame("MainFrame");
         frame.setSize(500, 500);
