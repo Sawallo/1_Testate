@@ -14,11 +14,11 @@ public class Geometriker {
         System.out.println("dimensions: "+pd1.dimensions());
 
         System.out.println("\nRectangle: ");
-        Rectangle r1 = new Rectangle(new Point2D(15, 23), new Point2D(34, 18));
+        Rectangle r1 = new Rectangle(new Point2D(15, 05), new Point2D(34, 18));
         Rectangle r2 = new Rectangle(new Point2D(60, 10), new Point2D(21, 24));
         System.out.println("compareTo: "+r1.compareTo(r2));
         System.out.println("compareTo: "+r2.compareTo(r1));
-        System.out.println("encapsulate r + r: "+r1.encapsulate(r2));
+        System.out.println("encapsulate r + r: "+r2.encapsulate(r1));
         System.out.println("encapsulate r + p: "+r1.encapsulate(pd1));
         System.out.println("dimensions: "+r1.dimensions());
         System.out.println("volume: "+r1.volume());
