@@ -1,11 +1,16 @@
 public class Drone extends MobileRobot implements Flyable {
 
-    public void bringup() {
-        System.out.println(x+" "+y+" "+z);
+
+    @Override
+    public void flyForward(double distance) {
+     positionX = distance;
+     positionZ = distance;
+     positionY = distance;       
     }
 
-    public void flyForward(double distance) {
-        System.out.println("Drine fliegt voran");
+    @Override
+    public String bringup() {
+      return "Drone wird gestartet... ";
     }
-    
+
 }

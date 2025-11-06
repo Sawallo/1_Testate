@@ -1,5 +1,4 @@
 public interface Flyable {
-    
-    public void flyForward(double distance);
+    void flyForward(double distance);
 
 }
