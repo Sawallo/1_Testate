@@ -4,8 +4,8 @@ public class ExceptionHandler {
 
     public  void handleExceptionsSeparately(){
         try {
-           throw new IOException ("");
-           
+            throw new IOException ("");
+            
         } catch (IOException e) {
             System.out.println("IOException abgefangen");
             e.printStackTrace();
@@ -15,7 +15,7 @@ public class ExceptionHandler {
 			System.err.println("NumberFormatException abgefangen");
             e2.printStackTrace();
 		}try {
-          int zahl2 = 10/0;
+            int zahl2 = 10/0;
             
         } catch (ArithmeticException e3) {
             System.out.println("ArithmeticException abgefangen");
@@ -25,17 +25,17 @@ public class ExceptionHandler {
 
     }
 
-     public void handleExceptionsWithMultiCatch(){
-      try {
+    public void handleExceptionsWithMultiCatch(){
+    try {
         int zahl2 = 10/0;
         int zahl = Integer.parseInt("abc");
         throw new IOException ("");
         
 
-      } catch (IOException |NumberFormatException|ArithmeticException e4) {
+    } catch (IOException |NumberFormatException|ArithmeticException e4) {
         System.err.println(e4+ " Ausgelöst");
         e4.printStackTrace();
-      }
+    }
     }
 
     public static void main(String[] args)  {
@@ -43,7 +43,7 @@ public class ExceptionHandler {
         ExceptionHandler a = new ExceptionHandler();
         a.handleExceptionsSeparately();
         a.handleExceptionsWithMultiCatch();
-       
+    
 
         
     }
