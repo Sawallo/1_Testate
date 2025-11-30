@@ -8,7 +8,7 @@ public class Main {
 
 
         
-        Grid<GameObject> Feld = new Grid<>(12, 12);
+        Grid<GameObject> Feld = new Grid<>(90, 90);
         Player Spieler = new Player(1, 1);
         Wall Wand = new Wall(3,2);
         Feld.addObj(Spieler);
@@ -36,12 +36,14 @@ public class Main {
         window.add(fenster);
 
         
-        window.setSize(900, 900); 
+        window.setSize(900, 900);
         window.setLocationRelativeTo(null); //mitte
+        window.setVisible(true);
         window.setVisible(true);
 
 
 
     }
+
 
 }
