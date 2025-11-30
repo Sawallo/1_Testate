@@ -94,6 +94,7 @@ public class Main {
         window.setSize(1200, 1200); 
         window.setLocationRelativeTo(null); //mitte
         window.setVisible(true);
+        window.setVisible(true);
 
         //steuerung
         window.requestFocus();
