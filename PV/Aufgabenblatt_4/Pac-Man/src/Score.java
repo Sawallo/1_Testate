@@ -2,7 +2,7 @@ import java.io.Serializable;
 
 public class Score implements Serializable{
     
-    private  int punkte = 0;
+    private int punkte = 0;
 
     public Score(){
     }

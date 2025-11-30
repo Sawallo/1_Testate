@@ -5,13 +5,13 @@ public class Grid <T extends GameObject>{
 
     private int width;
     private int height;
-    private GameObject[][] felder;
+    private T[][] felder;
 
 
     public Grid(int width, int height){
         this.width = width;
         this.height = height;
-        this.felder = new GameObject[width][height]; 
+        this.felder = (T[][]) new GameObject[width][height]; 
     }
 
 
@@ -28,6 +28,10 @@ public class Grid <T extends GameObject>{
         return felder[x][y];
     }
 
+    public T getObjekT(int x, int y){
+        return felder[x][y];
+    }
+     
 
     //Objekt wird aufs feld hinzugefügt 
     public void addObj(T obj){
