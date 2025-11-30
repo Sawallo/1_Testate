@@ -1,5 +1,4 @@
 import java.awt.event.KeyAdapter;
-import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
@@ -13,7 +12,7 @@ public class Main {
         
                     
         String[] layout = {
-            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+            "WWWWWWWWWWWWWWWWWWWWWWWWWWWW",
             "WP...........WW............W",
             "W.WWWW.WWWWW.WW.WWWWW.WWWW.W",
             "W.WWWW.WWWWW.WW.WWWWW.WWWW.W",
