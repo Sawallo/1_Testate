@@ -9,6 +9,6 @@ public class GameGUI extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g); 
         g.setColor(Color.RED);
-        g.fillOval(50, 50, 100, 100);
+        g.fillOval(50, 50, 10, 10);
     }
 }

@@ -8,7 +8,6 @@ public abstract class GameObject  {
         this.y = y; 
     }
 
-
     public  int getX() {
         return x;
     }
@@ -24,9 +23,6 @@ public abstract class GameObject  {
     public void setY(int y) {
         this.y = y;
     }
-
-
-
 
 
     public abstract void update();

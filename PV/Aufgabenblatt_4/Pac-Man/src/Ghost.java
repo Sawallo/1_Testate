@@ -4,7 +4,7 @@ public class Ghost extends GameObject{
         super(x, y);
     } 
 
-        @Override
+    @Override
     public void update() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");

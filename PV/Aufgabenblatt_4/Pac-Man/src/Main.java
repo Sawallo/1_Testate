@@ -7,14 +7,12 @@ public class Main {
 
 
 
-
         
         Grid<GameObject> Feld = new Grid<>(12, 12);
         Player Spieler = new Player(1, 1);
         Wall Wand = new Wall(3,2);
         Feld.addObj(Spieler);
         Feld.addObj(Wand);
-
 
 
 
@@ -29,9 +27,6 @@ public class Main {
         
 
 
-
-
-
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setTitle("Pac-Man");
@@ -41,7 +36,7 @@ public class Main {
         window.add(fenster);
 
         
-        window.setSize(500, 500); 
+        window.setSize(900, 900); 
         window.setLocationRelativeTo(null); //mitte
         window.setVisible(true);
 
