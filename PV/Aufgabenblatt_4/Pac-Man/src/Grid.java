@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.awt.*;
 
 public class Grid <T extends GameObject>{
 
@@ -36,6 +38,7 @@ public class Grid <T extends GameObject>{
         
         int x = obj.getX();
         int y = obj.getY();
+        felder[x][y] = obj ; 
 
     }
 
