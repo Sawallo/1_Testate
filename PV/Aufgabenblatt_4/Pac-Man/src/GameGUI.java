@@ -41,7 +41,7 @@ public class GameGUI extends JPanel {
 
                 if (obj instanceof Dot){
                     g.setColor(Color.RED);
-                    g.fillOval(a,b, 10, 10);
+                    g.fillOval(a+5,b+5, 10, 10);
                 }
                 
                 g.drawLine(x*kasten, 0, x*kasten, grid.getHeight()*kasten);
