@@ -1,0 +1,19 @@
+public class Wall extends GameObject{
+
+     public Wall(int x, int y){
+        super(x, y);
+    }
+
+        @Override
+    public void update() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
+    }
+
+    @Override
+    public void move() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'move'");
+    }
+
+}
