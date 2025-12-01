@@ -113,16 +113,7 @@ public class Main {
                     fenster.repaint();
                 } catch (GameOverException ex) {
                     gameOver = true; 
-                    
-
-                 
-                        try {
-                            utils.saveScore(p.getScoreObj(), "highscore.dat");
-                        } catch (IOException e1) {
-                            
-                            e1.printStackTrace();
-                        }
-                    
+    
                     JOptionPane.showMessageDialog(window, ex.getMessage(), "Game Over", JOptionPane.INFORMATION_MESSAGE);
                     System.exit(0);
                 }
@@ -175,6 +166,10 @@ public class Main {
                         gameOver = true;
                         ghostTimer.stop();
                     }
+                    
+                    if (p.getScore() > highscore.getPunkte()) {
+                    utils.saveScore(p.getScoreObj(), "highscore.dat");
+                }
 
                     
                     window.setTitle("Punkte: " + p.getScore()+"| Highscore "+highscore.getPunkte());
