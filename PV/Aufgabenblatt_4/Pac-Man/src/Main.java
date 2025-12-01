@@ -8,8 +8,9 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 public class Main {
-
+ private static boolean gameOver = false;
     public static void main(String[] args) {
+        
         
 
 
@@ -111,7 +112,9 @@ public class Main {
                     }
                     fenster.repaint();
                 } catch (GameOverException ex) {
+                    gameOver = true; 
                     
+
                  
                         try {
                             utils.saveScore(p.getScoreObj(), "highscore.dat");
@@ -136,6 +139,11 @@ public class Main {
             
            
             public void keyPressed(KeyEvent e){
+
+                 if (gameOver==true) {
+                    System.out.println("Gameover");
+                    return;
+                }
                 int newX = p.getX();
                 int newY = p.getY();
                 int key = e.getKeyCode();
@@ -159,10 +167,15 @@ public class Main {
                 try {
                     //Feldabfrage
                     GameObject FeldPrüfung = Feld.get(newX, newY);
+
                     if (FeldPrüfung instanceof Dot) {
                         p.addScore(10);
                         
+                    }else if (FeldPrüfung instanceof Ghost) {
+                        gameOver = true;
+                        ghostTimer.stop();
                     }
+
                     
                     window.setTitle("Punkte: " + p.getScore()+"| Highscore "+highscore.getPunkte());
                     Feld.move(p,newX,newY);
