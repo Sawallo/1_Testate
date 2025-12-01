@@ -1,5 +1,6 @@
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
@@ -48,6 +49,7 @@ public class Main {
         
         Grid<GameObject> Feld = new Grid<>(28, 29);
         Player p = new Player(1, 1);
+        Score highscore = utils.loadScore("highscore.dat");
         List<Ghost> ghosts = new ArrayList<>();
         List<Dot> dots = new ArrayList<>();
         
@@ -90,7 +92,7 @@ public class Main {
         //Fenster wird erstellt
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setTitle("Pac-Man | Highscore: "+ p.getScore());
+       
 
         
         GameGUI fenster = new GameGUI(Feld);
@@ -109,6 +111,15 @@ public class Main {
                     }
                     fenster.repaint();
                 } catch (GameOverException ex) {
+                    
+                 
+                        try {
+                            utils.saveScore(p.getScoreObj(), "highscore.dat");
+                        } catch (IOException e1) {
+                            
+                            e1.printStackTrace();
+                        }
+                    
                     JOptionPane.showMessageDialog(window, ex.getMessage(), "Game Over", JOptionPane.INFORMATION_MESSAGE);
                     System.exit(0);
                 }
@@ -123,7 +134,7 @@ public class Main {
         window.requestFocus();
         window.addKeyListener(new KeyAdapter() {
             
-            @Override
+           
             public void keyPressed(KeyEvent e){
                 int newX = p.getX();
                 int newY = p.getY();
@@ -150,9 +161,10 @@ public class Main {
                     GameObject FeldPrüfung = Feld.get(newX, newY);
                     if (FeldPrüfung instanceof Dot) {
                         p.addScore(10);
+                        
                     }
                     
-                    window.setTitle("Punkte: " + p.getScore());
+                    window.setTitle("Punkte: " + p.getScore()+"| Highscore "+highscore.getPunkte());
                     Feld.move(p,newX,newY);
                     fenster.repaint();
                     
@@ -164,11 +176,8 @@ public class Main {
 
         });
 
-        //Highscore speichern
-      
-
-        //Highscore laden
-
+       
+        
 
     }
 
