@@ -2,8 +2,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 public class Main {
@@ -28,9 +28,9 @@ public class Main {
             "WWWWWW.WWWWW.WW.WWWWW.WWWWWW",
             "WWWWWW.WW..........WW.WWWWWW",
             "WWWWWW.WW.WWW--WWW.WW.WWWWWW",
-            "WWWWWW.WW.W      W.WW.WWWWWW",
+            "WWWWWW.WW.W  GG  W.WW.WWWWWW",
             "WWWWWW....W G  G W....WWWWWW",
-            "WWWWWW.WW.W      W.WW.WWWWWW",
+            "WWWWWW.WW.W  GG  W.WW.WWWWWW",
             "WWWWWW.WW.WWWWWWWW.WW.WWWWWW",
             "WWWWWW.WW..........WW.WWWWWW",
             "WWWWWW.WW.WWWWWWWW.WW.WWWWWW",
@@ -49,8 +49,8 @@ public class Main {
         Grid<GameObject> Feld = new Grid<>(28, 29);
         Player p = new Player(1, 1);
         List<Ghost> ghosts = new ArrayList<>();
+        List<Dot> dots = new ArrayList<>();
         
-        Ghost g = new Ghost(13, 13);
         for (int y = 0; y < 29; y++) {
             for (int x = 0; x < 28; x++) {
 
@@ -60,7 +60,9 @@ public class Main {
                         Feld.addObj(new Wall(x, y));
                         break;
                     case '.':
-                        Feld.addObj(new Dot(x, y));
+                        Dot dot = new Dot(x, y);
+                        Feld.addObj(dot);
+                        dots.add(dot);
                         break;
                     case 'P':
                         Feld.addObj(p);
@@ -101,12 +103,18 @@ public class Main {
 
 
         Timer ghostTimer = new Timer(80, e -> {
-        for (Ghost ghost : ghosts) {
-        ghost.randommove(Feld);
-            }
-            fenster.repaint();
-        });
-        ghostTimer.start();
+            try {
+                for (Ghost ghost : ghosts) {
+                ghost.randommove(Feld);
+                    }
+                    fenster.repaint();
+                } catch (GameOverException ex) {
+                    JOptionPane.showMessageDialog(window, ex.getMessage(), "Game Over", JOptionPane.INFORMATION_MESSAGE);
+                    System.exit(0);
+                }
+            });
+            ghostTimer.start();
+
 
         
 

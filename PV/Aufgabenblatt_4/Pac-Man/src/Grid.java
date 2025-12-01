@@ -1,17 +1,15 @@
-import javax.swing.*;
-import java.awt.*;
 
 public class Grid <T extends GameObject>{
 
     private int width;
     private int height;
-    private T[][] felder;
+    private GameObject[][] felder;
 
 
     public Grid(int width, int height){
         this.width = width;
         this.height = height;
-        this.felder = (T[][]) new GameObject[width][height]; 
+        this.felder = (GameObject[][]) new GameObject[width][height]; 
     }
 
 
@@ -28,7 +26,7 @@ public class Grid <T extends GameObject>{
         return felder[x][y];
     }
 
-    public T getObjekT(int x, int y){
+    public GameObject getObjekT(int x, int y){
         return felder[x][y];
     }
      
@@ -53,6 +51,7 @@ public class Grid <T extends GameObject>{
         
         int oldX = obj.getX();
         int oldY = obj.getY();
+        
         felder[oldX][oldY] = null;
 
         obj.setX(newX);
@@ -62,8 +61,30 @@ public class Grid <T extends GameObject>{
 
     }
 
+    public void gmove(T obj, int newX, int newY) throws InvalidMoveException, GameOverException {
+        int altX = obj.getX();
+        int altY = obj.getY();
+        obj.setX(newX);
+        obj.setY(newY);
+
+        if (felder[newX][newY] instanceof Player) {
+                
+                throw new GameOverException("Game Over");
+            }
+
+        else {
+            if (felder[newX][newY] instanceof Dot) {
+                Dot dot = new Dot(altX, altY);
+                felder[altX][altY] = dot;            
+            } else {felder[altX][altY] = null;}
+        
+        }
+        felder[newX][newY] = obj;
+
+    }
+
     //Objekt vom Spielfeld entfernen, z.B. wenn ein Punkt eingesammelt wird
-    public void remove(T obj){
+    public void removeP(T obj){
         int x = obj.getX();
         int y = obj.getY();
         felder[x][y] = null;

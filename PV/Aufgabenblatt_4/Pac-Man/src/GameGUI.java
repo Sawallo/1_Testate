@@ -1,6 +1,5 @@
 import java.awt.Color;
 import java.awt.Graphics;
-
 import javax.swing.JPanel;
 
 
@@ -32,7 +31,7 @@ public class GameGUI extends JPanel {
                 GameObject obj = grid.get(x, y);
                 
                 if (obj instanceof Wall){
-                    g.setColor(Color.LIGHT_GRAY);
+                    g.setColor(Color.DARK_GRAY);
                     g.fillRect(a, b, kasten, kasten);
                 }
 
@@ -47,7 +46,7 @@ public class GameGUI extends JPanel {
                 }
 
                 if (obj instanceof Ghost){
-                    g.setColor(Color.PINK);
+                    g.setColor(Color.MAGENTA);
                     g.fillOval(a, b, kasten, kasten);
                 }
 

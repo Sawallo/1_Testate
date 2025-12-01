@@ -14,7 +14,7 @@ public class Ghost extends GameObject{
         
     }
 
-    public void randommove(Grid<GameObject> grid) {
+    public void randommove(Grid<GameObject> grid) throws GameOverException {
         int x = this.getX();
         int y = this.getY();
 
@@ -29,7 +29,9 @@ public class Ghost extends GameObject{
         GameObject ziel = grid.get(newX, newY);
         if (!(ziel instanceof Wall) && !(ziel instanceof Ghost)) {
             try {
-                grid.move(this, newX, newY);
+        grid.gmove(this, newX, newY);
+            } catch (GameOverException ex) {
+                throw new RuntimeException(ex);
             } catch (Exception ex) {}
     }
 
