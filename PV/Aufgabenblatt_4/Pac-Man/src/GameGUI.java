@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 
 public class GameGUI extends JPanel {
 
-    private Grid<GameObject> grid;
+    private final Grid<GameObject> grid;
     int kasten = 20;
 
 
@@ -15,7 +15,7 @@ public class GameGUI extends JPanel {
 
     
     
-    
+    // Zeichnet Spielfeld
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         
@@ -50,7 +50,7 @@ public class GameGUI extends JPanel {
                     g.fillOval(a, b, kasten, kasten);
                 }
 
-                
+                // Gitterlinien
                 g.drawLine(x*kasten, 0, x*kasten, grid.getHeight()*kasten);
                 g.drawLine(0, y*kasten, grid.getWidth()*kasten, y*kasten);
             }

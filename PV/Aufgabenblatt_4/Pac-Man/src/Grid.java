@@ -41,7 +41,7 @@ public class Grid <T extends GameObject>{
     }
 
 
-    //Objekt wird auf dem Feld bewegt 
+    //Player wird auf dem Feld bewegt 
     public void move(T obj, int newX, int newY) throws InvalidMoveException {
     
         //Exception
@@ -51,7 +51,8 @@ public class Grid <T extends GameObject>{
         
         int oldX = obj.getX();
         int oldY = obj.getY();
-        
+
+        //Altes Feld leeren
         felder[oldX][oldY] = null;
 
         obj.setX(newX);
@@ -61,6 +62,7 @@ public class Grid <T extends GameObject>{
 
     }
 
+    //Geister werden bewegt
     public void gmove(T obj, int newX, int newY) throws InvalidMoveException, GameOverException {
         int altX = obj.getX();
         int altY = obj.getY();
@@ -70,6 +72,8 @@ public class Grid <T extends GameObject>{
         if (felder[newX][newY] instanceof Player) {
                 
                 throw new GameOverException("Game Over");
+                
+                
             }
 
         else {
@@ -82,6 +86,7 @@ public class Grid <T extends GameObject>{
         felder[newX][newY] = obj;
 
     }
+
 
     //Objekt vom Spielfeld entfernen, z.B. wenn ein Punkt eingesammelt wird
     public void removeP(T obj){

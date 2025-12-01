@@ -7,13 +7,14 @@ import java.io.ObjectOutputStream;
 
 public class utils {
     
-    
+    // Score Objekt speichern
     public static void saveScore(Score s, String name) throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(name))) {
             oos.writeObject(s);
         }
     }
 
+    // Score Objekt laden
     public static Score loadScore(String name) {
     try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(name))) {
         return (Score) ois.readObject();

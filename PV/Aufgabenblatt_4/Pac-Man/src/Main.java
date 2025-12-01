@@ -4,11 +4,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.Timer;
 
 public class Main {
- private static boolean gameOver = false;
+    private static boolean gameOver = false;
+    public static boolean getGameOver() {
+            return gameOver;
+    }
+    public static void setGameOver(boolean value) {
+        gameOver = value;
+    }
+
     public static void main(String[] args) {
         
         
@@ -50,7 +55,7 @@ public class Main {
         
         Grid<GameObject> Feld = new Grid<>(28, 29);
         Player p = new Player(1, 1);
-        Score highscore = utils.loadScore("highscore.dat");
+        Score highscore = utils.loadScore("highscore");
         List<Ghost> ghosts = new ArrayList<>();
         List<Dot> dots = new ArrayList<>();
         
@@ -105,21 +110,12 @@ public class Main {
         window.setVisible(true);
 
 
-        Timer ghostTimer = new Timer(80, e -> {
-            try {
-                for (Ghost ghost : ghosts) {
-                ghost.randommove(Feld);
-                    }
-                    fenster.repaint();
-                } catch (GameOverException ex) {
-                    gameOver = true; 
-    
-                    JOptionPane.showMessageDialog(window, ex.getMessage(), "Game Over", JOptionPane.INFORMATION_MESSAGE);
-                    System.exit(0);
-                }
-            });
-            ghostTimer.start();
-
+ 
+        for (Ghost ghost : ghosts) {
+            ghost.setFenster(fenster);
+            ghost.setGrid(Feld);
+            new Thread(ghost).start();
+        }
 
         
 
@@ -129,10 +125,14 @@ public class Main {
         window.addKeyListener(new KeyAdapter() {
             
            
+            @Override
             public void keyPressed(KeyEvent e){
 
                  if (gameOver==true) {
                     System.out.println("Gameover");
+                    for (Ghost ghost : ghosts) {
+                        ghost.stop();
+                    }
                     return;
                 }
                 int newX = p.getX();
@@ -164,11 +164,10 @@ public class Main {
                         
                     }else if (FeldPrüfung instanceof Ghost) {
                         gameOver = true;
-                        ghostTimer.stop();
                     }
                     
                     if (p.getScore() > highscore.getPunkte()) {
-                    utils.saveScore(p.getScoreObj(), "highscore.dat");
+                    utils.saveScore(p.getScoreObj(), "highscore");
                 }
 
                     
@@ -176,7 +175,7 @@ public class Main {
                     Feld.move(p,newX,newY);
                     fenster.repaint();
                     
-                } catch (Exception fehler) {
+                } catch (InvalidMoveException | IOException fehler) {
                     System.out.println(fehler.getMessage());
                 }
         

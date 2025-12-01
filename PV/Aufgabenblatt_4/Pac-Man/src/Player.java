@@ -1,7 +1,7 @@
 public class Player extends GameObject{
 
-
-    private Score score = new Score();
+    
+    private final Score score = new Score();
 
 
     public Player(int x, int y){
@@ -9,12 +9,12 @@ public class Player extends GameObject{
     }
 
 
-    //Punkte hinzufügen
+    
     public void addScore(int p){
         score.add(p);
     }
     
-    //Punkte abfragen
+    
     public int getScore(){
         return score.getPunkte();
     }
@@ -27,20 +27,14 @@ public class Player extends GameObject{
 
 
 
-
-
-
-
     @Override
     public void update() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        //todo
     }
 
     @Override
     public void move() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'move'");
+        //todo
     }
 
 }
