@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Fest",
+            "request": "launch",
+            "mainClass": "Fest",
+            "projectName": "1_Testate_1d9625c8"
+        },
+        {
+            "type": "java",
+            "name": "InsBett",
+            "request": "launch",
+            "mainClass": "InsBett",
+            "projectName": "1_Testate_1d9625c8"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "Main",
